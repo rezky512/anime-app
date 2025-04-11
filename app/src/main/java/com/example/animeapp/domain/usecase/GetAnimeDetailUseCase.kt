@@ -1,0 +1,12 @@
+package com.example.animeapp.domain.usecase
+
+import com.example.animeapp.domain.model.Anime
+import com.example.animeapp.domain.repository.AnimeRepository
+
+class GetAnimeDetailUseCase(
+    private val repository: AnimeRepository
+) {
+    suspend operator fun invoke(id: Int): Anime? {
+        return repository.getAnimeDetailById(id)
+    }
+}
